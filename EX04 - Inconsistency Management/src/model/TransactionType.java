@@ -1,5 +1,8 @@
 package src.model;
 
-public class TransactionType {
-    
+public enum TransactionType {
+        DEPOSIT,
+        WITHDRAWAL,
+        TRANSFER, 
+        REVERSAL
 }
