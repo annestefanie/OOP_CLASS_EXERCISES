@@ -11,7 +11,7 @@ Since each exercise is organized into its own folder, you can run any specific e
 1. Open your terminal and navigate to the specific exercise folder you want to run (for example, Exercise 3):
 
 ```bash
-cd Exercise-03-Product-Management
+cd "EX03 - Inventory Management"
 ```
 
 2. Compile the Java files:
@@ -29,4 +29,9 @@ java Main
 ## Technologies Used
 Java (JDK 8+)
 
-**Concepts**: Procedural logic, Control structures, Object-Oriented Programming (OOP), Encapsulation, and State Management.
+## Concepts
+ - Procedural logic;
+ - Control structures;
+ - Object-Oriented Programming (OOP);
+ - Encapsulation;
+ - State Management.
