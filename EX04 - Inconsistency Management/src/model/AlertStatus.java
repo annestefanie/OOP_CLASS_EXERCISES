@@ -1,5 +1,8 @@
 package src.model;
 
-public class AlertStatus {
-    
+public enum AlertStatus {
+    NEW,
+    UNDER_ANALYSIS,
+    RESOLVED,
+    DISMISSED
 }
