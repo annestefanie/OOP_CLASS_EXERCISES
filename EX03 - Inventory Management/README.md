@@ -1,17 +1,19 @@
-# Inventory Management
+# Exercise 3
+
+## Inventory Management
 
 A Java repository created to practice and demonstrate fundamental **Object-Oriented Programming (OOP)** concepts. This project simulates basic product control, highlighting encapsulation, access modifiers, inventory management methods, and business logic validation.
 
 ---
 
-## Technologies Used
+### Technologies Used
 
 * **Java** (JDK 8+)
 * Applied Concepts: Object-Oriented Programming (OOP), Encapsulation, Getters and Setters, Input Validation.
 
 ---
 
-## Features & Business Logic
+### Features & Business Logic
 
 The `Produto` class implements the following operations:
 
@@ -23,7 +25,7 @@ The `Produto` class implements the following operations:
 
 ---
 
-## Project Structure
+### Project Structure
 
 The project consists of two core classes:
 
@@ -32,7 +34,7 @@ The project consists of two core classes:
 
 ---
 
-## How to Run
+### How to Run
 
 1. Ensure you have the **JDK** installed on your system.
 2. Clone or download this repository.
