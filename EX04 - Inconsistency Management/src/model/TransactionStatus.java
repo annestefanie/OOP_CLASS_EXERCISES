@@ -1,5 +1,8 @@
 package src.model;
 
-public class TransactionStatus {
-    
+public enum TransactionStatus {
+    PENDING,
+    COMPLETED,
+    FAILED,
+    REVERSED
 }
