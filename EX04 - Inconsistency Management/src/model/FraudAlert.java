@@ -1,6 +1,7 @@
 package src.model;
 
 public class FraudAlert {
+    private int id;
     private Transaction transaction;
     private AlertStatus alertStatus;
     private RiskLevel riskLevel;
@@ -23,6 +24,10 @@ public class FraudAlert {
 
     public RiskLevel getRiskLevel(){
         return riskLevel;
+    }
+
+    public int getId(){
+        return id;
     }
 
 }
