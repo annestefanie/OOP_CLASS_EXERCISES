@@ -15,6 +15,9 @@ public class AlertRepository {
         if (newAlert != null) { 
             alerts.add(newAlert); 
         }
+        else {
+            throw new IllegalArgumentException("Alert must be not null.");
+        }
     }
 
     public List<FraudAlert> findAll(){ 
@@ -27,19 +30,27 @@ public class AlertRepository {
             if (alert.getId() == id){
                 return Optional.of(alert);
             }
+
         }
 
         return Optional.empty();
     }
 
-    public void update(FraudAlert updatedAlert){
-        alerts.set(updatedAlert) // teria que ter o id aqui também?
+    public void update(FraudAlert updatedAlert) {
+        if (updatedAlert == null) {
+            throw new IllegalArgumentException("Alert cannot be null.");
+        }
+    
+        for (int i = 0; i < alerts.size(); i++) {
+            if (updatedAlert.getId() == alerts.get(i).getId()) {
+                alerts.set(i, updatedAlert);
+                return;
+            }
+        }
+    
+        throw new IllegalArgumentException("Alert not found.");
     }
-
-    public void delete(FraudAlert alert){
-        alerts.remove(alert);
-    }
-
+   
     public void deleteById(int id){
         for(FraudAlert alert : alerts){
             if(alert.getId() == id){
