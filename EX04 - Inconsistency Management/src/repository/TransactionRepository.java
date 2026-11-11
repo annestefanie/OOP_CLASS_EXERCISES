@@ -5,9 +5,13 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 import src.model.Transaction;
+import src.model.TransactionType;
+import src.model.Account;
 
 public class TransactionRepository {
     private List<Transaction> transactions = new ArrayList<>();
+
+    // == METHODS == 
 
     public void save(Transaction newTransaction){ 
         
@@ -36,6 +40,7 @@ public class TransactionRepository {
     }
 
     public void update(Transaction updatedTransaction) {
+
         if (updatedTransaction == null) {
             throw new IllegalArgumentException("Transaction cannot be null.");
         }
@@ -51,10 +56,34 @@ public class TransactionRepository {
     }
    
     public void deleteById(int id){
+
         for(Transaction transaction : transactions){
             if(transaction.getId() == id){
                 transactions.remove(transaction);
             }
         }
+
+    }
+
+    public List<Transaction> findByAccountNumber(String accountNumber){
+        
+        if (accountNumber == null){
+            throw new IllegalArgumentException("Account cannot be null.");
+        }
+
+        List<Transaction> result = new ArrayList<>();
+        
+        for(int i = 0; i < transactions.size(); i++){
+            String acc = transactions.get(i).getAccount().getAccountNumber();
+                
+            if(accountNumber.equals(acc)){
+                result.add(transactions.get(i));   
+            }     
+        }
+        return result;
+    }
+
+    public void findByType(TransactionType type){
+
     }
 }
