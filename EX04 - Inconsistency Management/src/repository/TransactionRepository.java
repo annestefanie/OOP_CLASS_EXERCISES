@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import src.model.Transaction;
 import src.model.TransactionType;
-import src.model.Account;
 
 public class TransactionRepository {
     private List<Transaction> transactions = new ArrayList<>();
@@ -57,11 +56,13 @@ public class TransactionRepository {
    
     public void deleteById(int id){
 
-        for(Transaction transaction : transactions){
-            if(transaction.getId() == id){
-                transactions.remove(transaction);
+        for(int i = 0; i < transactions.size(); i++){
+            if(transactions.get(i).getId() == id){
+                transactions.remove(i);
+                return;
             }
         }
+        throw new IllegalArgumentException("Id not found.");
 
     }
 
@@ -83,7 +84,20 @@ public class TransactionRepository {
         return result;
     }
 
-    public void findByType(TransactionType type){
+    public List<Transaction> findByType(TransactionType type){
 
+        if (type == null){
+            throw new IllegalArgumentException("Type cannot be null.");
+        }
+        
+        List<Transaction> result = new ArrayList<>();
+
+        for(int i = 0; i < transactions.size(); i++){
+            if(type.equals(transactions.get(i).getTransactionType())){
+                result.add(transactions.get(i));
+            }
+        }
+
+        return result;
     }
 }
