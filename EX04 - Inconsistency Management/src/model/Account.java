@@ -29,7 +29,7 @@ public class Account {
     
     public void deposit(BigDecimal amount){
         
-        if (amount != null || amount.compareTo(BigDecimal.ZERO) <= 0){
+        if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException("Amount must be greater than zero.");
         }
 
