@@ -9,6 +9,7 @@ public class Transaction {
     private LocalDateTime dateTime;
     private TransactionType type;
     private TransactionStatus status;
+    private int id;
 
     public Transaction(Account account, BigDecimal value, LocalDateTime dateTime, TransactionType type, TransactionStatus status){
         this.account = account;
@@ -38,5 +39,9 @@ public class Transaction {
 
     public TransactionStatus getTransactionStatus(){
         return status;
+    }
+
+    public int getId(){
+        return id;
     }
 }
