@@ -30,4 +30,10 @@ public class FraudAlert {
         return id;
     }
 
+    // == SETTERS == 
+
+    public void setRiskLevel(RiskLevel riskLevel) {
+        this.riskLevel = riskLevel;
+    }
+
 }
