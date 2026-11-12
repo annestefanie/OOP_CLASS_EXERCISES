@@ -26,7 +26,7 @@ public class AlertRepository {
 
     public Optional<FraudAlert> findById(int id){
 
-        for(FraudAlert alert : alerts){
+        for(FraudAlert alert : alerts){ 
             if (alert.getId() == id){
                 return Optional.of(alert);
             }
