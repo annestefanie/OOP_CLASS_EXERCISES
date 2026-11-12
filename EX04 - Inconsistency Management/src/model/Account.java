@@ -33,7 +33,7 @@ public class Account {
             throw new IllegalArgumentException("Amount must be greater than zero.");
         }
 
-            balance = balance.add(amount);
+        balance = balance.add(amount);
     }
     
     public void withdraw(BigDecimal amount) {
